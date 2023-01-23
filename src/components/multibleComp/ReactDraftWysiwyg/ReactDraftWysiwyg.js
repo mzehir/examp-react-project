@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
-// import htmlToDraft from "html-to-draftjs";
+import EditorCss from "./CustomEditor";
+
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { customToolbar } from "./comp/CustomToolbar";
-import { customMention } from "./comp/CustomMention";
-import { customHashtag } from "./comp/CustomHashtag";
 
 const ReactDraftWysiwyg = () => {
   const [editorState, setEditorState] = useState(() =>
@@ -25,20 +22,14 @@ const ReactDraftWysiwyg = () => {
   };
 
   return (
-    <>
-      <Editor
+    <React.Fragment>
+      <EditorCss
         editorState={editorState}
-        toolbarClassName="toolbarClassName"
-        wrapperClassName="wrapperClassName"
-        editorClassName="editorClassName"
         onEditorStateChange={onEditorStateChange}
-        //* Extra
-        toolbar={customToolbar}
-        mention={customMention}
-        hashtag={customHashtag}
       />
+
       <textarea disabled value={draftToHtmlData} />
-    </>
+    </React.Fragment>
   );
 };
 
