@@ -8,6 +8,8 @@ const TextFieldNumberFormat = () => {
 
 export default TextFieldNumberFormat;
 
+//* Tüm ülkelerin decimalSeparator apileri bulunmalı sonra devam edecek.
+
 // customInput React.Component<any>
 // default: null
 // Özel bileşenler bu props ile kullanılır.
@@ -60,7 +62,7 @@ export default TextFieldNumberFormat;
 
 //! decimalSeparator string
 // default: '.'
-// Ondalık karakteri tanımlar. Daha iyi anlaşılması için =>  
+// Ondalık karakteri tanımlar. Daha iyi anlaşılması için =>
 // Eğer ondalık karakter ',' olarak tanımlandıysa '.' karakterine basılsa bile ',' karakterini koyar.
 
 //! prefix string
@@ -73,8 +75,9 @@ export default TextFieldNumberFormat;
 
 //! thousandsGroupStyle string
 // default: ,
-// Binlik gruplama stilini tanımlar. Mesela => 
+// Binlik gruplama stilini tanımlar.
+
+// ??
 // Bin stili (bin)  : 123.456.789
 // Hint stili (lakh): 12.34.56.789
 // Çin stili (wan)  : 1.2345.6789
-

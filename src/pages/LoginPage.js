@@ -11,7 +11,6 @@ import { ReactComponent as Logo } from "../vendor/logo.svg";
 
 import { spacing } from "@mui/system";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import TextFieldNumberFormat from "../components/TextFieldNumberFormat";
 
 const TextField = styled(TextFieldComp)(spacing);
 
@@ -60,8 +59,6 @@ function LoginPage() {
             label="Password"
             type="password"
           />
-
-          <TextFieldNumberFormat />
 
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
