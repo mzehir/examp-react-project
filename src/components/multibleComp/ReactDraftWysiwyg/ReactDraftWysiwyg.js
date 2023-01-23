@@ -4,11 +4,9 @@ import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 // import htmlToDraft from "html-to-draftjs";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import {
-  customHashtag,
-  customMention,
-  customToolbar,
-} from "./ReactDraftWysiwygHelper";
+import { customToolbar } from "./comp/CustomToolbar";
+import { customMention } from "./comp/CustomMention";
+import { customHashtag } from "./comp/CustomHashtag";
 
 const ReactDraftWysiwyg = () => {
   const [editorState, setEditorState] = useState(() =>
