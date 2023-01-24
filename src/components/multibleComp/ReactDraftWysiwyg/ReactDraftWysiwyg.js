@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
-import EditorCss from "./CustomEditor";
+import EditorCss from "./EditorCss";
+import { REACT_DRAFT_WYSIWYG_SETTINGS } from "../../../settings";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
+const reactDraftWysiwygRootStyle = {
+  display: "flex",
+  flexDirection: "row",
+  gap: "5px",
+  height: "100%",
+};
+
+const textareaStyle = {
+  width: "100%",
+  height: "100%",
+};
 
 const ReactDraftWysiwyg = () => {
   const [editorState, setEditorState] = useState(() =>
@@ -22,14 +35,16 @@ const ReactDraftWysiwyg = () => {
   };
 
   return (
-    <React.Fragment>
+    <div style={reactDraftWysiwygRootStyle}>
       <EditorCss
         editorState={editorState}
         onEditorStateChange={onEditorStateChange}
       />
 
-      <textarea disabled value={draftToHtmlData} />
-    </React.Fragment>
+      {REACT_DRAFT_WYSIWYG_SETTINGS.reactDraftWysiwygTextareaElVisible && (
+        <textarea disabled style={textareaStyle} value={draftToHtmlData} />
+      )}
+    </div>
   );
 };
 
