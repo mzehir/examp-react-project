@@ -27,11 +27,16 @@
 // import { ReactComponent as UnlinkIcon } from "../../../../assets/reactDraftWysiwyg/unlink.svg";
 // import { ReactComponent as UnorderedIcon } from "../../../../assets/reactDraftWysiwyg/unordered.svg";
 
+import { IMGUR_CONFIG } from "../../../../utils/config/config";
+
 function uploadImageCallBack(file) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.imgur.com/3/image");
-    xhr.setRequestHeader("Authorization", "Client-ID 991a0e15ea25453");
+    xhr.setRequestHeader(
+      "Authorization",
+      `Client-ID ${IMGUR_CONFIG.CLIENT_ID}`
+    );
     const data = new FormData();
     data.append("image", file);
     xhr.send(data);
