@@ -1,13 +1,13 @@
 import React from "react";
-import styled, { css } from "styled-components/macro";
-import ReactPerfectScrollbar from "react-perfect-scrollbar";
-import { List } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-
-import SidebarNavSection from "./SidebarNavSection";
+import SidebarNavSection from "./content/SidebarNavSection";
 import "../../../vendor/perfect-scrollbar.css";
 import { routerArrReturn } from "../../../utils/constants/routerConstant";
+
+import ReactPerfectScrollbar from "react-perfect-scrollbar";
+import styled, { css } from "styled-components/macro";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { List } from "@mui/material";
 
 const baseScrollbar = css`
   background-color: ${(props) => props.theme.sidebar.background};
@@ -28,7 +28,7 @@ const Items = styled.div`
   padding-bottom: ${(props) => props.theme.spacing(2.5)};
 `;
 
-const SidebarNav = () => {
+const Content = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("md"));
   const ScrollbarComponent = matches ? PerfectScrollbar : Scrollbar;
@@ -53,4 +53,4 @@ const SidebarNav = () => {
   );
 };
 
-export default SidebarNav;
+export default Content;

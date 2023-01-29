@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import Navbar from "../components/multibleComp/navbar/Navbar";
-import Sidebar from "../components/multibleComp/sidebar/Sidebar";
+import Sidebar from "../components/multibleComp/Sidebar";
 import Footer from "../components/multibleComp/Footer";
 import Settings from "../components/multibleComp/Settings";
 import GlobalStyle from "../components/GlobalStyle";

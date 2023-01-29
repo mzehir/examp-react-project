@@ -1,14 +1,8 @@
-import React, { forwardRef } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import CustomRouterLink from "./CustomRouterLink";
 import styled from "styled-components/macro";
 import { rgba, darken } from "polished";
 import { ListItemButton, ListItemText } from "@mui/material";
-
-const CustomRouterLink = forwardRef((props, ref) => (
-  <div ref={ref}>
-    <NavLink {...props} />
-  </div>
-));
 
 const Title = styled(ListItemText)`
   margin: 0;

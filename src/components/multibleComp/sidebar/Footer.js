@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components/macro";
 import TypographyComp from "../../Typography";
+import styled from "styled-components/macro";
 import { Badge, Grid, Avatar } from "@mui/material";
 
-const Footer = styled.div`
+const FooterWrapper = styled.div`
   background-color: ${(props) =>
     props.theme.sidebar.footer.background} !important;
   padding: ${(props) => props.theme.spacing(2.75)}
@@ -34,11 +34,11 @@ const FooterBadge = styled(Badge)`
   }
 `;
 
-const SidebarFooter = ({ ...rest }) => {
+const Footer = ({ ...rest }) => {
   const { user } = false;
 
   return (
-    <Footer {...rest}>
+    <FooterWrapper {...rest}>
       <Grid container spacing={2}>
         <Grid item>
           <FooterBadge
@@ -68,8 +68,8 @@ const SidebarFooter = ({ ...rest }) => {
           <FooterSubText variant="caption">Administrator</FooterSubText>
         </Grid>
       </Grid>
-    </Footer>
+    </FooterWrapper>
   );
 };
 
-export default SidebarFooter;
+export default Footer;

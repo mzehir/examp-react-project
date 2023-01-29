@@ -1,29 +1,13 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { NavLink } from "react-router-dom";
 
+import BoxComp from "../../Box";
+import { ReactComponent as Logo } from "../../../vendor/logo.svg";
+
+import styled from "styled-components/macro";
 import { spacing } from "@mui/system";
 import { green } from "@mui/material/colors";
-import {
-  Box as MuiBox,
-  Chip,
-  Drawer as MuiDrawer,
-  ListItemButton,
-} from "@mui/material";
-
-import { ReactComponent as Logo } from "../../../vendor/logo.svg";
-import Footer from "./SidebarFooter";
-import SidebarNav from "./SidebarNav";
-
-const Box = styled(MuiBox)(spacing);
-
-const Drawer = styled(MuiDrawer)`
-  border-right: 0;
-
-  > div {
-    border-right: 0;
-  }
-`;
+import { Chip, ListItemButton } from "@mui/material";
 
 const Brand = styled(ListItemButton)`
   font-size: ${(props) => props.theme.typography.h5.fontSize};
@@ -71,19 +55,17 @@ const BrandChip = styled(Chip)`
   }
 `;
 
-const Sidebar = ({ items, showFooter = true, ...rest }) => {
+const BoxCompCustomize = styled(BoxComp)(spacing);
+
+const Header = () => {
   return (
-    <Drawer variant="permanent" {...rest}>
-      <Brand component={NavLink} to="/">
-        <BrandIcon />{" "}
-        <Box ml={1}>
-          CAFE APP <BrandChip label="PRO" />
-        </Box>
-      </Brand>
-      <SidebarNav />
-      {!!showFooter && <Footer />}
-    </Drawer>
+    <Brand component={NavLink} to="/">
+      <BrandIcon />{" "}
+      <BoxCompCustomize ml={1}>
+        CAFE APP <BrandChip label="PRO" />
+      </BoxCompCustomize>
+    </Brand>
   );
 };
 
-export default Sidebar;
+export default Header;
