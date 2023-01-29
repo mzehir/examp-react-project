@@ -11,6 +11,34 @@ export const ROUTER = {
     sidebarVisible: true,
     icon: null,
   },
+
+  TYPOGRAPHY: {
+    path: "/typography",
+    label: "Typography",
+    sidebarVisible: true,
+    icon: null,
+  },
+
+  TEXTFIELD: {
+    path: "/text-field",
+    label: "TextField",
+    sidebarVisible: true,
+    icon: null,
+  },
+
+  BUTTON: {
+    path: "/button",
+    label: "Button",
+    sidebarVisible: true,
+    icon: null,
+  },
+
+  DIALOG: {
+    path: "/dialog",
+    label: "Dialog",
+    sidebarVisible: true,
+    icon: null,
+  },
 };
 
 export const routerArrReturn = () => {

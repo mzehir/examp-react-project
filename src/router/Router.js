@@ -7,8 +7,12 @@ import AuthLayout from "../layouts/AuthLayout";
 import DefaultLayout from "../layouts/DefaultLayout";
 import AuthGuard from "../guard/AuthGuard";
 
-import LoginScreen from "../pages/LoginPage";
+import LoginPage from "../pages/LoginPage";
 import DashboadPage from "../pages/DashboardPage";
+import TypographyPage from "../pages/compPages/TypographyPage";
+import TextFieldPage from "../pages/compPages/TextFieldPage";
+import ButtonPage from "../pages/compPages/ButtonPage";
+import DialogPage from "../pages/compPages/DialogPage";
 
 export const Router = () => {
   return (
@@ -17,7 +21,7 @@ export const Router = () => {
         path={ROUTER.LOGIN.path}
         element={
           <AuthLayout>
-            <LoginScreen />
+            <LoginPage />
           </AuthLayout>
         }
       />
@@ -28,6 +32,50 @@ export const Router = () => {
           <AuthGuard>
             <DefaultLayout>
               <DashboadPage />
+            </DefaultLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path={ROUTER.TYPOGRAPHY.path}
+        element={
+          <AuthGuard>
+            <DefaultLayout>
+              <TypographyPage />
+            </DefaultLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path={ROUTER.TEXTFIELD.path}
+        element={
+          <AuthGuard>
+            <DefaultLayout>
+              <TextFieldPage />
+            </DefaultLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path={ROUTER.BUTTON.path}
+        element={
+          <AuthGuard>
+            <DefaultLayout>
+              <ButtonPage />
+            </DefaultLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path={ROUTER.DIALOG.path}
+        element={
+          <AuthGuard>
+            <DefaultLayout>
+              <DialogPage />
             </DefaultLayout>
           </AuthGuard>
         }
