@@ -5,6 +5,7 @@ export const ROUTER = {
     sidebarVisible: false,
     icon: null,
   },
+
   DASHBOARD: {
     path: "/",
     label: "Dashboard",
@@ -41,12 +42,14 @@ export const ROUTER = {
   },
 };
 
-export const routerArrReturn = () => {
+export const sidebarRouterArrReturn = () => {
   let routerKeys = Object.keys(ROUTER);
   let returnArr = [];
 
   for (let i = 0; i < routerKeys.length; i++) {
-    returnArr.push(ROUTER[routerKeys[i]]);
+    if (ROUTER[routerKeys[i]].sidebarVisible) {
+      returnArr.push(ROUTER[routerKeys[i]]);
+    }
   }
 
   return returnArr;

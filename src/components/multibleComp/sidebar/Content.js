@@ -1,7 +1,7 @@
 import React from "react";
 import SidebarNavSection from "./content/SidebarNavSection";
 import "../../../vendor/perfect-scrollbar.css";
-import { routerArrReturn } from "../../../utils/constants/routerConstant";
+import { sidebarRouterArrReturn } from "../../../utils/constants/routerConstant";
 
 import ReactPerfectScrollbar from "react-perfect-scrollbar";
 import styled, { css } from "styled-components/macro";
@@ -37,16 +37,13 @@ const Content = () => {
     <ScrollbarComponent>
       <List disablePadding>
         <Items>
-          {routerArrReturn().map(
-            (routeItem) =>
-              routeItem.sidebarVisible && (
-                <SidebarNavSection
-                  component="div"
-                  key={routeItem.path}
-                  itemInfo={routeItem}
-                />
-              )
-          )}
+          {sidebarRouterArrReturn().map((routeItem) => (
+            <SidebarNavSection
+              component="div"
+              key={routeItem.path}
+              itemInfo={routeItem}
+            />
+          ))}
         </Items>
       </List>
     </ScrollbarComponent>
