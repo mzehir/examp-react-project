@@ -2,7 +2,10 @@ import React from "react";
 import CustomRouterLink from "./CustomRouterLink";
 import styled from "styled-components/macro";
 import { rgba, darken } from "polished";
-import { ListItemButton, ListItemText } from "@mui/material";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+
+import NestedSidebarNavSection from "./NestedSidebarNavSection";
 
 const Title = styled(ListItemText)`
   margin: 0;
@@ -59,13 +62,22 @@ const SidebarNavSection = (props) => {
 
   return (
     <Component {...rest}>
-      <Item
-        component={CustomRouterLink}
-        to={itemInfo.path}
-        activeclassname="active"
-      >
-        <Title>{itemInfo.label}</Title>
-      </Item>
+      {itemInfo.routers ? (
+        <NestedSidebarNavSection
+          itemInfo={itemInfo}
+          Item={Item}
+          Title={Title}
+        />
+      ) : (
+        <Item
+          component={CustomRouterLink}
+          to={itemInfo.path}
+          activeclassname="active"
+        >
+          <itemInfo.icon />
+          <Title>{itemInfo.label}</Title>
+        </Item>
+      )}
     </Component>
   );
 };
