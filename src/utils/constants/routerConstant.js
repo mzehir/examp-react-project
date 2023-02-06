@@ -53,7 +53,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS2",
+    wrapperKey: "COMPONENTS1",
   },
 
   DIALOG: {
