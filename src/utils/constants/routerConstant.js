@@ -1,9 +1,9 @@
 import { Grid } from "react-feather";
 
 const WRAPPER = {
-  COMPONENTS1: {
-    label: "Components1",
-    key: "COMPONENTS1",
+  COMPONENTS: {
+    label: "Components",
+    key: "COMPONENTS",
     icon: Grid,
   },
 
@@ -35,7 +35,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS1",
+    wrapperKey: "COMPONENTS",
   },
 
   TEXTFIELD: {
@@ -44,7 +44,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS1",
+    wrapperKey: "COMPONENTS",
   },
 
   BUTTON: {
@@ -53,7 +53,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS1",
+    wrapperKey: "COMPONENTS",
   },
 
   DIALOG: {
@@ -62,7 +62,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS2",
+    wrapperKey: "COMPONENTS",
   },
 };
 
