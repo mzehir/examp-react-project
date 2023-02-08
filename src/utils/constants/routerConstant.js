@@ -47,6 +47,15 @@ export const ROUTER = {
     wrapperKey: "COMPONENTS",
   },
 
+  UPLOADS: {
+    path: "/uploads",
+    label: "Uploads",
+    icon: null,
+    sidebarVisible: true,
+    isWrapper: true,
+    wrapperKey: "COMPONENTS",
+  },
+
   BUTTON: {
     path: "/button",
     label: "Button",
@@ -62,7 +71,7 @@ export const ROUTER = {
     icon: null,
     sidebarVisible: true,
     isWrapper: true,
-    wrapperKey: "COMPONENTS",
+    wrapperKey: "COMPONENTS2",
   },
 };
 

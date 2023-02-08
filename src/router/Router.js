@@ -13,6 +13,7 @@ import TypographyPage from "../pages/compPages/TypographyPage";
 import TextFieldPage from "../pages/compPages/TextFieldPage";
 import ButtonPage from "../pages/compPages/ButtonPage";
 import DialogPage from "../pages/compPages/DialogPage";
+import UploadsPage from "../pages/compPages/UploadsPage";
 
 export const Router = () => {
   return (
@@ -54,6 +55,17 @@ export const Router = () => {
           <AuthGuard>
             <DefaultLayout>
               <TextFieldPage />
+            </DefaultLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path={ROUTER.UPLOADS.path}
+        element={
+          <AuthGuard>
+            <DefaultLayout>
+              <UploadsPage />
             </DefaultLayout>
           </AuthGuard>
         }
