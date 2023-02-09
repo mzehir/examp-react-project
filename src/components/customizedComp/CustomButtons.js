@@ -18,6 +18,16 @@ export const UploadImgButton = (props) => {
   );
 };
 
+export const DeleteAllButton = (props) => {
+  const { children, ...other } = props;
+
+  return (
+    <ButtonComp variant="outlined" endIcon={<ImageIcon />} {...other}>
+      Delete all images
+    </ButtonComp>
+  );
+};
+
 export const SendButton = (props) => {
   const { children, ...other } = props;
 
