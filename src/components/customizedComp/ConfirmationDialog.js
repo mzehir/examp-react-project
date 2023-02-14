@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import ButtonComp from "../Button";
 import {
@@ -25,14 +26,9 @@ const ConfirmationDialog = ({
   const handleClose = () => {
     noButtonClick();
   };
+
   return (
-    <DialogComp
-      open={open}
-      onClose={handleClose}
-      fullWidth
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
-    >
+    <DialogComp open={open} onClose={handleClose} fullWidth>
       <DialogTitleComp>{titleText}</DialogTitleComp>
 
       <DialogContentComp>
@@ -52,3 +48,13 @@ const ConfirmationDialog = ({
 };
 
 export default ConfirmationDialog;
+
+ConfirmationDialog.propTypes = {
+  titleText: PropTypes.string.isRequired,
+  contentText: PropTypes.string.isRequired,
+  yesButtonText: PropTypes.string.isRequired,
+  noButtonText: PropTypes.string.isRequired,
+  open: PropTypes.bool.isRequired,
+  yesButtonClick: PropTypes.func.isRequired,
+  noButtonClick: PropTypes.func.isRequired,
+};

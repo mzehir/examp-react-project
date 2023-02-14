@@ -1,4 +1,5 @@
 import React from "react";
+import { styled } from "@mui/material/styles";
 
 import {
   DialogComp,
@@ -7,9 +8,10 @@ import {
   DialogActionsComp,
 } from "../Dialog";
 
-import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+
+//*****************************************************************************************
 
 export const BootstrapDialog = styled(DialogComp)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -19,6 +21,8 @@ export const BootstrapDialog = styled(DialogComp)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
+
+//*****************************************************************************************
 
 export const BootstrapDialogTitle = (props) => {
   const { children, onClose, ...other } = props;
@@ -44,6 +48,8 @@ export const BootstrapDialogTitle = (props) => {
   );
 };
 
+//*****************************************************************************************
+
 export const BootstrapDialogContent = (props) => {
   const { children, ...other } = props;
 
@@ -53,6 +59,8 @@ export const BootstrapDialogContent = (props) => {
     </DialogContentComp>
   );
 };
+
+//*****************************************************************************************
 
 export const BootstrapDialogActions = (props) => {
   const { children, ...other } = props;

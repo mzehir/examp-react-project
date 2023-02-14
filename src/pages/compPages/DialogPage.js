@@ -6,6 +6,7 @@ import TypographyComp from "../../components/Typography";
 import ButtonComp from "../../components/Button";
 import DividerComp from "../../components/Divider";
 import { CardComp, CardContentComp } from "../../components/Card";
+import ConfirmationDialog from "../../components/customizedComp/ConfirmationDialog";
 import {
   DialogComp,
   DialogTitleComp,
@@ -13,6 +14,12 @@ import {
   DialogContentTextComp,
   DialogActionsComp,
 } from "../../components/Dialog";
+import {
+  BootstrapDialog,
+  BootstrapDialogActions,
+  BootstrapDialogContent,
+  BootstrapDialogTitle,
+} from "../../components/customizedComp/BootstrapDialog";
 
 import { spacing } from "@mui/system";
 
@@ -44,6 +51,14 @@ const DialogPage = () => {
 
         <GridComp item xs={4}>
           <ScrollingDialog />
+        </GridComp>
+
+        <GridComp item xs={4}>
+          <ConfirmationDialogComp />
+        </GridComp>
+
+        <GridComp item xs={4}>
+          <BootstrapDialogComp />
         </GridComp>
       </GridComp>
     </React.Fragment>
@@ -311,6 +326,103 @@ function ScrollingDialog() {
           </DialogContentComp>
           <DialogActionsComp>Dialog Actions</DialogActionsComp>
         </DialogComp>
+      )}
+    </>
+  );
+}
+
+//*****************************************************************************************
+
+function ConfirmationDialogComp() {
+  const ConfirmationDialogProps = {
+    titleText: "Title Text",
+    contentText: "Content Questions Text",
+    yesButtonText: "Yes",
+    noButtonText: "No",
+  };
+
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Card>
+        <CardContentComp>
+          <TypographyComp variant="h6" gutterBottom>
+            Confirmation dialog kullanım
+          </TypographyComp>
+
+          <ButtonComp
+            sx={{ m: 2 }}
+            variant="outlined"
+            onClick={() => setOpen(true)}
+          >
+            Confirmation dialog
+          </ButtonComp>
+        </CardContentComp>
+      </Card>
+
+      {open && (
+        <ConfirmationDialog
+          open={open}
+          yesButtonClick={() => {
+            alert("Yes Button Click");
+            setOpen(false);
+          }}
+          noButtonClick={() => {
+            alert("No Button Click");
+            setOpen(false);
+          }}
+          {...ConfirmationDialogProps}
+        />
+      )}
+    </>
+  );
+}
+
+//*****************************************************************************************
+
+function BootstrapDialogComp() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Card>
+        <CardContentComp>
+          <TypographyComp variant="h6" gutterBottom>
+            Bootstrap Dialog kullanım
+          </TypographyComp>
+
+          <ButtonComp
+            sx={{ m: 2 }}
+            variant="outlined"
+            onClick={() => setOpen(true)}
+          >
+            Bootstrap Dialog
+          </ButtonComp>
+        </CardContentComp>
+      </Card>
+
+      {open && (
+        <BootstrapDialog open={open} onClose={() => setOpen(false)}>
+          <BootstrapDialogTitle onClose={() => setOpen(false)}>
+            Bootstrap Dialog Title
+          </BootstrapDialogTitle>
+
+          <BootstrapDialogContent>
+            Bootstrap Dialog Content Bootstrap Dialog ContentBootstrap Dialog
+            ContentBootstrap Dialog ContentBootstrap Dialog ContentBootstrap
+            Dialog ContentBootstrap Dialog ContentBootstrap Dialog Content
+          </BootstrapDialogContent>
+
+          <BootstrapDialogActions>
+            <ButtonComp color="success" onClick={() => alert("Yes")}>
+              Yes text
+            </ButtonComp>
+            <ButtonComp color="error" onClick={() => alert("No")} autoFocus>
+              No text
+            </ButtonComp>
+          </BootstrapDialogActions>
+        </BootstrapDialog>
       )}
     </>
   );

@@ -19,8 +19,6 @@ export const DialogComp = (props) => {
 DialogComp.propTypes = {
   maxWidth: PropTypes.oneOf(maxWidthEnum),
   scroll: PropTypes.oneOf(scrollEnum),
-  open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 DialogComp.defaultProps = {
